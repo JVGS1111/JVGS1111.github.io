@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/dracula.css">
+	<title>Alura DEV</title>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/modal-mensagem-codigo-salvo.css">
+</head>
+<body>
+   <div class="mensagem-area">
+        
+   </div>
+    
+    <header>
+        <div class="logo" style="width: 50%;">
+            <img src="imgs/Logo.png">
+        </div> <!--logo-->
+        
+
+        <div class="menu-mobile">
+            <div class="menu-icone" onclick="cadastroDoCodigoController.abrirMenu()">
+                <div class="menu-mobile-aba">
+                    <ul>
+                        <li><a href="index.html">Editor De Codigo</a></li>
+                        <li><a href="communidade.html">Comunidade</a></li>
+                    </ul>
+                </div><!--menu-mobile-aba-->
+            </div><!--menu-icone-->
+        </div><!--menu-mobile-->
+        <div class="clear"></div>
+
+
+        <div class="Usuario" style="width: 50%;">
+            <img style="background-image: url(./imgs/user.png);">
+            <h2>Guerber</h2>
+        </div><!--Usuario-->
+
+        <div class="clear"></div>
+    </header>
+    <section class="main">
+            
+        </div>
+        <div class="menu-esquerda">
+            <h2>M E N U</h2>
+            <ul>
+                <li><div class="icone-li-menu-esquerda EditorDeCodigo"><img onclick="window.location.href = 'index.html'" src="imgs/Vector.png"></div><a href="index.html">Editor De Codigo</a></li>
+                <li><div class="icone-li-menu-esquerda Comunidade"><img onclick="window.location.href = 'comunidade.html'" src="imgs/Vector2.png"></div><a href="comunidade.html">Comunidade</a></li>
+            </ul>
+        </div><!--menu-esquerda-->
+
+        <div class="section-area-de-codigo">
+            <div class="Area-de-codigo">
+                <div class="backgroud-Area-de-codigo">
+                    <span style="background-color: #FF5F56;"></span>
+                    <span style="background-color: #FFBD2E;"></span>
+                    <span style="background-color: #27C93F;"></span>
+                    <div class="clear"></div>
+                    <div class="codigo-wrapper" id="codigo-wrapper">
+                        <code class="preview" contenteditable="true" aria-label="editor" required></code>
+                    </div>
+                    
+                </div><!--backgroud-Area-de-codigo-->
+            </div><!--Area-de-codigo-->
+            
+            <input onclick="cadastroDoCodigoController.aplicarHighlight()" class="botaoVisualizar" id="botaoVisualizar" type="button" value="Visualizar com o Highlight">
+        </div><!--section-area-de-codigo-->
+
+        <div class="section-menu-direita">
+            <div class="seu-projeto">
+                <form id="form-criar-post" onsubmit="cadastroDoCodigoController.adiciona(event)">
+                    <h2>S E U &nbsp; P R O J E T O</h2>
+                    <input type="text" name="nome-do-projeto" id="nome-do-projeto" placeholder="Nome do seu projeto" required>
+                    <input type="text" name="descricao-do-projeto" id="descricao-do-projeto" placeholder="Descrição do seu projeto" required>
+
+                    <h2>P E R S O N A L I Z A Ç Ã O</h2>
+                    
+                    <select id="Linguagem" onchange="cadastroDoCodigoController.selecionarLinguagem()" required>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JavaScript" selected>JavaScript</option>
+                    </select>
+                    <input onclick="cadastroDoCodigoController.mudarCorDaBorda()" type="button" id="botao-trocar-cor" name="botao-trocar-cor" >
+                    <input type="submit" id="salvar-projeto" name="salvar-projeto" value="Salvar Projeto">
+                </form>
+            </div><!-- seu-projeto -->
+            
+        </div><!--section-menu-direita-->
+    </section><!--main-->
+    
+</body>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script src="js/controller/CadastroDeCodigoController.js"></script>
+<script src="js/helper/AbrirMenu.js"></script>
+<script src="js/view/View.js"></script>
+<script src="js/view/HighlightView.js"></script>
+<script src="js/view/MensagemView.js"></script>
+<script src="js/model/Codigo.js"></script>
+<script src="js/model/ListaDeCodigo.js"></script>
+<script src="js/service/ConnectionFactory.js"></script>
+<script src="js/dao/codigoDao.js"></script>
+
+<script>
+    const cadastroDoCodigoController = new CadastroDeCodigoController();
+</script>
+</html>
