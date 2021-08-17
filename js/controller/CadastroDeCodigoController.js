@@ -6,7 +6,7 @@ class CadastroDeCodigoController{
         this._descricao = document.querySelector('#descricao-do-projeto');
         this._seletorDeLinguagem = document.querySelector('#Linguagem');
         this._borda = document.querySelector('.Area-de-codigo');
-        this._codigo = this._codigoWrapper.querySelector('code');
+        
         this._botaoTrocarCor = document.querySelector('#botao-trocar-cor');
 
         this._listaDeCodigos = new ListaDeCodigo();
@@ -72,7 +72,7 @@ class CadastroDeCodigoController{
             this._descricao.value,
             this._seletorDeLinguagem.value,
             this._borda.style.backgroundColor,
-            this._codigo.innerHTML,
+            this.this._codigoWrapper.querySelector('code').innerHTML,
             new Date()
         )
     }
