@@ -72,7 +72,7 @@ class CadastroDeCodigoController{
             this._descricao.value,
             this._seletorDeLinguagem.value,
             this._borda.style.backgroundColor,
-            this.this._codigoWrapper.querySelector('code').innerHTML,
+            this._codigoWrapper.querySelector('code').innerHTML,
             new Date()
         )
     }
